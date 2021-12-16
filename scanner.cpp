@@ -16,7 +16,7 @@ void Scanner::on_startButton_clicked()
     m_port.clear();
 
     QStringList portlist = portEntry->text().split(',');
-    for(int i = 0; i < portlist.size(); i++) m_port.append(portlist[i].toUInt());
+    for(int x = 0; x < portlist.size(); x++) m_port.append(portlist[x].toUInt());
 
     m_r = ScannerNet::Scan(hostnameEntry->text(), m_port);
 
@@ -28,21 +28,16 @@ void Scanner::Scanneropt()
 {
     QString output;
 
-    for(int i = 0; i < m_r.size(); i ++)
+    for(int x = 0; x < m_r.size(); x ++)
     {
-        if(m_r[i] == true)
+        if(m_r[x] == true)
         {
-            output = "Port "+ QString::number(m_port[i]) + ": Connected !";
+            output = "Port "+ QString::number(m_port[x]) + ": Connected !";
             resultWindow->setTextColor("green");
-        }
-
-        else
-        {
-            output = "Port " + QString::number(m_port[i]) + ": not connected !";
+        } else {
+            output = "Port " + QString::number(m_port[x]) + ": not connected !";
             resultWindow->setTextColor("red");
         }
-
         resultWindow->append(output);
-
     }
 }
