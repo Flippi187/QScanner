@@ -8,6 +8,7 @@ class ScannerNet : public QObject
     Q_OBJECT
 public:
     explicit ScannerNet(QObject *parent = nullptr);
+   static QVector<bool> Scan(QString hostname, QVector<int> ports);
 
 signals:
 
