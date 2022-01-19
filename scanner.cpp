@@ -8,6 +8,7 @@ Scanner::Scanner(QWidget *parent) :
 {
     m_scan = new ScannerNet;
     setupUi(this);
+
 }
 
 void Scanner::on_startButton_clicked()
